@@ -10,25 +10,26 @@
 
 <?php
 //------------------------------ 1 ---------------------------------------
-
+//
 //$arr1 = array('banana','apple','car');
 //
 //function StringOperations($arr1, $param = false)
 //{
 //    if ($param) {
 //        return implode("", $arr1);
+//    } else {
+//        for ($i = 0; $i <= count($arr1); $i++) {
+//            echo '<p>'.$arr1[$i].'</p>';
+//        }
 //    }
-//    return $arr1;
 //}
-//StringOperations($arr1);
-//$strWithTrue = StringOperations($arr1, true);
-//for ($i = 0; $i <= count($strWithTrue); $i++) {
-//    echo '<p>'.$strWithTrue[$i].'</p>';
-//}
-
-//------------------------------2---------------------------------------
 //
-//$Arr123 = array(2,0,6,5);
+//$FunResult = StringOperations($arr1, true);
+//echo $FunResult, '<br>';
+//
+////------------------------------2---------------------------------------
+////
+//$Arr123 = array(2,4,6,5);
 //
 //set_error_handler(function () {
 //    throw new Exception('Ach!');
@@ -43,7 +44,7 @@
 //    }
 //    foreach ($ArrNumb as $value) {//are elements correct
 //           if (strcasecmp(gettype ($value), 'NULL') == 0 or strcasecmp(gettype ($value), 'object') == 0 or strcasecmp(gettype($value), 'string') == 0) {
-//               return 'array element error';
+//               return 'вы попытались ввести неверный тип данных - '.gettype ($value);
 //           }
 //
 //    }
@@ -81,7 +82,7 @@
 //$FunResult = calc($Arr123, '/');
 //
 //echo $FunResult, '<br>';
-//------------------------------3-----------------------------------------
+////------------------------------3-----------------------------------------
 //set_error_handler(function () {
 //    throw new Exception('Ach!');
 //});
@@ -97,7 +98,7 @@
 //    }
 //    foreach ($ArrNumb as $value) {//are elements correct
 //           if (strcasecmp(gettype($value), 'NULL') == 0 or strcasecmp(gettype($value), 'object') == 0 or strcasecmp(gettype ($value), 'string') == 0 ){
-//               return 'array element error';
+//               return 'вы попытались ввести неверный тип данных - '.gettype ($value);
 //           }
 //
 //    }
@@ -132,130 +133,130 @@
 //    }
 //    return $ArrNumb[count($ArrNumb)-1];//return the last element
 //}
-//$FunResult = get_sum('+', 2, 8, 6, 5.5);
+//$FunResult3 = get_sum('+', 2, 8, 6, 5.5);
 //
-//echo $FunResult, '<br>';
+//echo $FunResult3, '<br>';
 //------------------------------4-----------------------------------------
-//function CheckVarble(){
-//    $ArrNumb = (func_get_args());//create array
-//    foreach ($ArrNumb as $value) {//are elements correct
-//        if (strcasecmp(gettype($value), 'integer') <> 0) {
-//            return false;
-//        }
-//    }
-//    return true;
-//}
-//
-//
-//function MultipTable($Multiplier1, $Multiplier2)
-//{
-//    if (CheckVarble($Multiplier1, $Multiplier2)) {//are elements correct
-//        for ($i = 1; $i <= $Multiplier1; $i++) {
-//            for ($j = 1; $j <= $Multiplier2; $j++) {
-//                echo $i . " * " . $j . " = " . $i * $j, '<br>';
-//
-//            }
-//        }
-//    } else {
-//        return 'incorrect argument';
-//    }
-//
-//}
-//
-//
-//$FunResult = MultipTable(2, 6);
-//
-//echo $FunResult, '<br>';
+function CheckVarble(){
+    $ArrNumb = (func_get_args());//create array
+    foreach ($ArrNumb as $value) {//are elements correct
+        if (strcasecmp(gettype($value), 'integer') <> 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
 
+function MultipTable($Multiplier1, $Multiplier2)
+{
+    if (CheckVarble($Multiplier1, $Multiplier2)) {//are elements correct
+        for ($i = 1; $i <= $Multiplier1; $i++) {
+            for ($j = 1; $j <= $Multiplier2; $j++) {
+                echo $i . " * " . $j . " = " . $i * $j."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                if ($j == $Multiplier2) {
+                    echo '<br>';
+                }
+            }
 
+        }
+    } else {
+        return 'incorrect argument';
+    }
+
+}
+
+
+$FunResult4 = MultipTable(2, 6);
+
+echo $FunResult4, '<br>';
 
 
 //------------------------------5-----------------------------------------
-//$Word = '  ';
-//
-//function Palindrom($Word){
-//    $ArrWord = str_split($Word);
-//
-//    $counter1 = 0;
-//    for ($i = 0; $i <= (int)((count($ArrWord))/2)-1; $i++) {
-//        if ($ArrWord[$i] == $ArrWord[count($ArrWord)-$i-1]) {
-//            $counter1++;
-//        }
-//    }
-//    if (intval((count($ArrWord))/2) == $counter1) {
-//        return 'Палиндром';
-//    } else {
-//        return 'НЕ палиндром';
-//    }
-//}
-//$FunResult = Palindrom($Word);
-//echo $FunResult, '<br>';
+echo $Word = 'gatag', '<br>';
+
+function Palindrom($Word){
+    $ArrWord = str_split($Word);
+
+    $counter1 = 0;
+    for ($i = 0; $i <= (int)((count($ArrWord))/2)-1; $i++) {
+        if ($ArrWord[$i] == $ArrWord[count($ArrWord)-$i-1]) {
+            $counter1++;
+        }
+    }
+    if (intval((count($ArrWord))/2) == $counter1) {
+        return 'Палиндром';
+    } else {
+        return 'НЕ палиндром';
+    }
+}
+$FunResult5 = Palindrom($Word);
+echo $FunResult5, '<br>';
 //------------------------------6-----------------------------------------
-//echo date('d.m.o G:i'), '<br>';
-//echo strtotime("24 February 2016 4 hours 2 minutes"), '<br>';
+echo date('d.m.o G:i'), '<br>';
+echo strtotime("24 February 2016 4 hours 2 minutes"), '<br>';
 ////------------------------------7-----------------------------------------
-//$str='Карл у Клары украл Кораллы';
-//echo str_replace('К', '', $str), '<br>';
-//
-//$str='Две бутылки лимонада';
-//print_r(str_replace('Две', 'три', $str));
+echo $str='Карл у Клары украл Кораллы', '<br>';
+echo str_replace('К', '', $str), '<br>';
+
+echo $str='Две бутылки лимонада', '<br>';
+print_r(str_replace('Две', 'три', $str));
+echo '<br>';
 ////------------------------------8-----------------------------------------
-//$str1='RX packets:381 errors:0 dropped:0 overruns:)0 frame:0.';
-//function get_RX($str)
-//{
-//    if (strpos($str, ':)') !== false) {
-//        return  draw_smile();
-//    }
-//    $ArrStr = explode(" ", $str);
-//    $str = str_replace("packets:", "", $ArrStr[1]);
-//    if ($str>1000) {
-//        return "сеть есть";
-//    } else {
-//        return 'сети нет';
-//    }
-//}
-//
-//$FunResult = get_RX($str1);
-//echo $FunResult, '<br>';
-//
-//function draw_smile(){
-//$str = "
-//████████████████████████████████████████<br />
-//█████████████▀▀░░░░░░░░░░▀▀▀████████████<br />
-//█████████▀▀░░░░░░░░░░░░░░░░░░░▀█████████<br />
-//███████▀░░░░░░░░░░░░░░░░░░░░░░░░▀███████<br />
-//█████▀░▄▄▄░░░░░░░░░░░░░░▄▄▄▄░░░░░░▀█████<br />
-//████▀▄▀░░░██▄░░░░░░░░░▄▀░░░▄██▄░░░░░████<br />
-//███▀█░░░░█████░░░░░░░█░░░░░█████░░░░░███<br />
-//██▀░█░░░░░░░░█░░░░░░▄░░░░░░░░░░█░░░░░▀██<br />
-//██░░█░░░░░░░░█░░░░░░▀▄░░░░░░░░░█░░░░░░██<br />
-//██░░▀▀▀▀▀▀▀▀▀▀░░░░░░░▀▀▀▀▀▀▀▀▀▀▀░░░░░░██<br />
-//██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██<br />
-//██░░░▀█████████████████████████▄░░░░░░██<br />
-//██▄░░░▀█████████████████████████░░░░░▄██<br />
-//███▄░░░█████████████████████████░░░░░███<br />
-//████▄░░░███████████▀▀▀▀▀▀██████░░░░░████<br />
-//█████▄░░░▀███████▀░░░░░░░░░▀██░░░░▄█████<br />
-//███████▄░░░▀████░░░░░░░░░░▄█▀░░░▄███████<br />
-//█████████▄░░░▀▀█▄▄▄▄▄▄▄▄▀▀░░░░▄█████████<br />
-//████████████▄▄▄░░░░░░░░░░▄▄▄████████████<br />
-//████████████████████████████████████████";
-//    return $str;
-//}
+$str1='RX packets:381 errors:0 dropped:0 overruns:)0 frame:0.';
+function get_RX($str)
+{
+    if (strpos($str, ':)') !== false) {
+        return  draw_smile();
+    }
+    $ArrStr = explode(" ", $str);
+    $str = str_replace("packets:", "", $ArrStr[1]);
+    if ($str>1000) {
+        return "сеть есть";
+    } else {
+        return 'сети нет';
+    }
+}
+
+$FunResult8 = get_RX($str1);
+echo $FunResult8, '<br>';
+
+function draw_smile(){
+$str = '
+████████████████████████████████████████<br />
+█████████████▀▀░░░░░░░░░░▀▀▀████████████<br />
+█████████▀▀░░░░░░░░░░░░░░░░░░░▀█████████<br />
+███████▀░░░░░░░░░░░░░░░░░░░░░░░░▀███████<br />
+█████▀░▄▄▄░░░░░░░░░░░░░░▄▄▄▄░░░░░░▀█████<br />
+████▀▄▀░░░██▄░░░░░░░░░▄▀░░░▄██▄░░░░░████<br />
+███▀█░░░░█████░░░░░░░█░░░░░█████░░░░░███<br />
+██▀░█░░░░░░░░█░░░░░░▄░░░░░░░░░░█░░░░░▀██<br />
+██░░█░░░░░░░░█░░░░░░▀▄░░░░░░░░░█░░░░░░██<br />
+██░░▀▀▀▀▀▀▀▀▀▀░░░░░░░▀▀▀▀▀▀▀▀▀▀▀░░░░░░██<br />
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██<br />
+██░░░▀█████████████████████████▄░░░░░░██<br />
+██▄░░░▀█████████████████████████░░░░░▄██<br />
+███▄░░░█████████████████████████░░░░░███<br />
+████▄░░░███████████▀▀▀▀▀▀██████░░░░░████<br />
+█████▄░░░▀███████▀░░░░░░░░░▀██░░░░▄█████<br />
+███████▄░░░▀████░░░░░░░░░░▄█▀░░░▄███████<br />
+█████████▄░░░▀▀█▄▄▄▄▄▄▄▄▀▀░░░░▄█████████<br />
+████████████▄▄▄░░░░░░░░░░▄▄▄████████████<br />
+████████████████████████████████████████';
+    return $str;
+}
 
 ////------------------------------9-----------------------------------------
-//$myfile = file_put_contents("test.txt", "Hello world");
-//
-//GetCont('test.txt');
-//function GetCont($fileName)
-//{
-//    $contFile = file_get_contents($fileName, true);
-//    echo $contFile;
-//}
-////------------------------------10-----------------------------------------
-//$myfile = file_put_contents("anothertest.txt", "Hello again");
+$myfile = file_put_contents("test.txt", "Hello world");
 
+GetCont('test.txt');
+function GetCont($fileName)
+{
+    $contFile = file_get_contents($fileName, true);
+    echo $contFile;
+}
+////------------------------------10-----------------------------------------
+$myfile = file_put_contents("anothertest.txt", "Hello again");
 
 ?>
 </body>
