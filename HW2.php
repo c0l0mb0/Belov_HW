@@ -9,6 +9,7 @@
 <H1> домашка 2</H1>
 
 <?php
+// Не принято: 1, 2, 3, 8
 //------------------------------ 1 ---------------------------------------
 //
 //$arr1 = array('banana','apple','car');
@@ -137,6 +138,7 @@
 //
 //echo $FunResult3, '<br>';
 //------------------------------4-----------------------------------------
+// Принято
 function CheckVarble(){
     $ArrNumb = (func_get_args());//create array
     foreach ($ArrNumb as $value) {//are elements correct
@@ -173,6 +175,7 @@ echo $FunResult4, '<br>';
 
 
 //------------------------------5-----------------------------------------
+// Принято
 echo $Word = 'gatag', '<br>';
 
 function Palindrom($Word){
@@ -193,9 +196,11 @@ function Palindrom($Word){
 $FunResult5 = Palindrom($Word);
 echo $FunResult5, '<br>';
 //------------------------------6-----------------------------------------
+// Принято
 echo date('d.m.o G:i'), '<br>';
 echo strtotime("24 February 2016 4 hours 2 minutes"), '<br>';
 ////------------------------------7-----------------------------------------
+// Принято
 echo $str='Карл у Клары украл Кораллы', '<br>';
 echo str_replace('К', '', $str), '<br>';
 
@@ -203,6 +208,8 @@ echo $str='Две бутылки лимонада', '<br>';
 print_r(str_replace('Две', 'три', $str));
 echo '<br>';
 ////------------------------------8-----------------------------------------
+// Не принято
+// Проверки не соответствуют заданию
 $str1='RX packets:381 errors:0 dropped:0 overruns:)0 frame:0.';
 function get_RX($str)
 {
@@ -247,6 +254,7 @@ $str = '
 }
 
 ////------------------------------9-----------------------------------------
+// Принято
 $myfile = file_put_contents("test.txt", "Hello world");
 
 GetCont('test.txt');
@@ -256,6 +264,7 @@ function GetCont($fileName)
     echo $contFile;
 }
 ////------------------------------10-----------------------------------------
+// Принято
 $myfile = file_put_contents("anothertest.txt", "Hello again");
 
 ?>
