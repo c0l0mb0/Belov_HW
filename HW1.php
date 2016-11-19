@@ -13,7 +13,7 @@
 <H1> домашка 1</H1>
 
 <?php
-//---------------------------------------------------------------------
+////---------------------------------------------------------------------
 // Принято
 $name = "Ivan";
 $age = 30;
@@ -36,12 +36,12 @@ echo LENGTH, '<br>';
 //echo LENGTH = 321, '<br>';
 //---------------------------------------------------------------------
 // Не соответствует заданию
-$age = 0;
-if (18 < $age and $age < 65) {
+$age = rand(1, 120);
+if (18 < $age and $age <= 65) {
     echo "Вам еще работать и работать", '<br>';
 } elseif ($age > 65) {
     echo "Вам   пора   на   пенсию", '<br>';
-} elseif ($age < 17 and $age > 0) {
+} elseif ($age <= 17 and $age > 0) {
     echo "Вам   ещё   рано   работать", '<br>';
 } else {
     echo "Неизвестный   возраст", '<br>';
@@ -61,7 +61,7 @@ switch ($day) {
         break;
 
 }
-//---------------------------------------------------------------------
+/////////---------------------------------------------------------------------
 // Не соответствует заданию.
 $BMW = array(
     "model" => "X5",
@@ -69,7 +69,7 @@ $BMW = array(
     "doors" => "5",
     "year" => "2015"
 );
-$Tyota = array(
+$Toyota = array(
     "model" => "Camry",
     "speed" => "110",
     "doors" => "3",
@@ -82,12 +82,14 @@ $Opel = array(
     "year" => "2011"
 );
 
-$arrGen = array($BMW, $Tyota, $Opel);
-
-for ($i = 0; $i < count($arrGen); $i++) {
-    echo "CAR" . $arrGen[$i], '<br>';
-    echo $arrGen[$i]["model"] . " " . $arrGen[$i]["speed"] . " " . $arrGen[$i]["doors"] . " " . $arrGen[$i]["year"], '<br>';
+$arrGen = array('BMW' => $BMW,'Tyota' => $Toyota,'Opel' => $Opel);
+foreach($arrGen as $key => $value)
+{
+    echo "CAR " . $key, '<br>';
+    echo $value["model"] . " " . $value["speed"] . " " . $value["doors"] . " " . $value["year"], '<br>';
 }
+
+
 
 
 //---------------------------------------------------------------------
@@ -96,11 +98,14 @@ for ($i = 0; $i < count($arrGen); $i++) {
 for ($i = 1; $i <= 10; $i++) {
     for ($j = 1; $j <= 10; $j++) {
         if ($i % 2 == 0 and $i % 2 == 0) {
-            echo "( " . $i . " * " . $j . " = " . $i * $j . " )", '<br>';
+            echo "(" . $i . " * " . $j . " = " . $i * $j . ")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
         } elseif ($i % 2 <> 0 and $j % 2 <> 0) {
-            echo "[ " . $i . " * " . $j . " = " . $i * $j . " ]", '<br>';
+            echo "[" . $i . " * " . $j . " = " . $i * $j . "]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
         } else {
-            echo $i . " * " . $j . " = " . $i * $j, '<br>';
+            echo $i . " * " . $j . " = " . $i * $j . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" ;
+        }
+        if ($j == 10) {
+            echo '<br>';
         }
     }
 }
