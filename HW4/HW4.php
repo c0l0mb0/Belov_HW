@@ -10,13 +10,16 @@
 
 <?php
 //------------------------------ 1 ---------------------------------------
-
+// Не принято
+// Вторая часть задачи не выполнена
 $fileContents = file_get_contents('something.xml');
 file_put_contents('data.xml',$fileContents);
 $fileContents = file_get_contents('something.xml');
 echo $fileContents, '</br>';
 
 //------------------------------ 2 ---------------------------------------
+// Не принято
+// Искать различия необходимо в массивах, не в JSON строках
 $ArrSport = array (
     "Football"=> array (
         "Players" => 22,
@@ -76,6 +79,7 @@ function DifferStr ($str1, $str2){
     }
 }
 //------------------------------ 3 ---------------------------------------
+// Принято
 $RandArrDimens = rand(50,rand());
 $RandArrDimens = rand(10,20);
 echo $RandArrDimens, '</br>';
@@ -102,6 +106,7 @@ foreach ($ArrCSV as $value){
 fclose($handle);
 echo $sum , '</br>';
 //------------------------------ 4 ---------------------------------------
+// Принято
 // инициализация сеанса
 $ch = curl_init();
 
