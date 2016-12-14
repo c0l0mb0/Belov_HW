@@ -1,0 +1,50 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+
+    <form action="http://mymvclacal/about_user/save_user_inf" method="post"  enctype="multipart/form-data">
+        <p>
+            <label>Ваше имя<br></label>
+        </p>
+        <input name="Name" id="Name" type="text" size="38" maxlength="20" value="{{ name }}">
+        <p>
+        <p>
+            <label>О себе<br></label>
+        </p>
+        <textarea name="About_user" id="About_user" type="text" cols="40" rows="5"
+                  maxlength="255">{{ About_user }}</textarea>
+        <p>
+
+            <div>
+        <p>
+            <label>Год рождения (4 цифры)<br></label>
+        </p>
+        <input type="number" name="age" id="age" min="1" max="2100" step="1" size="4" maxlength="4"
+               value="{{ Birth_Year }}">
+
+        </div>
+        <br>
+        <input type="submit" name="SaveUserInfo" value="Сохранить данные">
+
+        <div>
+            <p><label>Загрузка изображения<br></label></p>
+            <input type="file" name="picture" >
+
+
+            <br>
+            <input type="submit" name="PhotoLoad" value="Загрузить фото">
+            <div>  <li style="color:red;">{{ status }}</li>   </div>
+
+        </div>
+    </form>
+    <br>
+    <div><p><label>Список ваших фотографий<br></p></label> </div>
+    {% for row in FileList %}
+        <div class="col-md-15">
+            {{ row }}
+        </div>
+    {% endfor %}
+
+{% endblock %}
