@@ -1,34 +1,12 @@
 <?php
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
-class CreateGoodsTable extends Migration
-{
-    /**
-     * Выполнение миграций.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('goods', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('category');
-            $table->string('amount');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-    }
+require 'Illuminate.php';
 
-    /**
-     * Отмена миграций.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::drop('goods');
-    }
-}
-
+$capsule::schema()->create('goods', function ($table) {
+    $table->increments('id')->unsigned();
+    $table->string('name');
+    $table->string('category');
+    $table->integer('id_user');
+    $table->integer('amount');
+    $table->timestamps();
+});
