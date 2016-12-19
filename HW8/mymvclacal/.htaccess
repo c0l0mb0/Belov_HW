@@ -1,0 +1,8 @@
+AddDefaultCharset utf-8
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/Ajax_API_query.php
+RewriteCond %{REQUEST_URI} !^/sender.php
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
